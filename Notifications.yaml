@@ -1,7 +1,7 @@
 mode: restart
 blueprint:
-  name: 🔔 Notifications (Version 2.0.2 Beta)
-  source_url: https://github.com/samuelthng/t-house-blueprints/blob/main/notifications.yaml
+  name: 🔔 Notifications
+  source_url: https://github.com/Maranatha34/Home-Assistant-Notifications/blob/main/Notifications.yaml
   homeassistant:
     min_version: 2023.11.0
   domain: script
@@ -955,7 +955,8 @@ sequence:
       car_ui: !input car_ui
 
       # [Notification Banner Icon]
-      notification_icon: !input icon
+      script_icon: !input icon
+      notification_icon: "{{ iif(field_icon is defined, field_icon, script_icon) }}"
       enable_icon_color: !input enable_icon_color
       icon_color_selector: !input icon_color
       icon_color_hex: '{{ "#{:02x}{:02x}{:02x}".format(icon_color_selector[0], icon_color_selector[1], icon_color_selector[2]) }}'
