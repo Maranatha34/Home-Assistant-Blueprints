@@ -168,9 +168,9 @@ sequence:
   ##############################
   - alias: Basic Notification Content
     variables:
-      title: title
-      subtitle: subtitle
-      message: message
+      title: "title"
+      subtitle: "{subtitle}"
+      message: "{message}"
 
   # - alias: Common Configuration Options
   #   variables:
