@@ -113,7 +113,6 @@ fields:
   importance:
     name: "❕ Notification Channel Importance"
     description: "See [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic/#notification-channel-importance) for more information.  \n\n`🤖 Android Only`"
-    default: default
     selector:
       select:
         options:
@@ -133,7 +132,6 @@ fields:
   interruption_level:
     name: "❕ Interruption Level"
     description: "See [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic/#interruption-level) for more information.  \n\n` iOS Only`"
-    default: active
     selector:
       select:
         options:
@@ -148,7 +146,6 @@ fields:
   visibility:
     name: "🔏 Notification Lockscreen Visibility"
     description: "Show or hide notification content on the lockscreen.  \nSee [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic?_highlight=tag#notification-sensitivity--lock-screen-visibility) for more information.  \n\nDefault: `Private`  \n\n`🤖 Android Only`"
-    default: "private"
     selector:
       select:
         options:
@@ -220,17 +217,6 @@ sequence:
       notify_device: notify_device
       notify_service: >-
         {{ "notify.mobile_app_{id}".format(id=device_attr(notify_device,'name')|slugify) }}
-
-
-
-
-
-
-
-
-
-
-
 
 
 
