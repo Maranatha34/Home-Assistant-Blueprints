@@ -33,120 +33,120 @@ fields:
     selector:
       text:
 
-  # field_icon:
-  #   name: "🙂 Icon"
-  #   description: "Custom icon for this notification. Android Only."
-  #   selector:
-  #     icon:
-  # field_enable_icon_color:
-  #   name: "🎨 Use Icon Color"
-  #   description: "If disabled, uses default icon color. Android Only."
-  #   selector:
-  #     boolean:
-  # field_icon_color:
-  #   name: "🎨 Icon Color"
-  #   description: "Custom icon color for this notification. Android Only."
-  #   selector:
-  #     color_rgb:
+  field_icon:
+    name: "🙂 Icon"
+    description: "Custom icon for this notification. Android Only."
+    selector:
+      icon:
+  field_enable_icon_color:
+    name: "🎨 Use Icon Color"
+    description: "If disabled, uses default icon color. Android Only."
+    selector:
+      boolean:
+  field_icon_color:
+    name: "🎨 Icon Color"
+    description: "Custom icon color for this notification. Android Only."
+    selector:
+      color_rgb:
 
-  # field_notification_link:
-  #   name: "🔗 Notification Link"
-  #   description: "Link to navigate to upon clicking the notification.
-  #     Examples:
-  #       Home Assistant relative links: `/config/updates` or `/lovelace/home`. 
-  #       Apps: `app://<package name>`. 
-  #       Entity `More Info` Panel: `entityId:<entity_ID>`. 
-  #       Deep links: `deep-link://<deep_link>`. 
-  #       See [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic/#opening-a-url) for more information and options."
-  #   selector:
-  #     text:
+  field_notification_link:
+    name: "🔗 Notification Link"
+    description: "Link to navigate to upon clicking the notification.
+      Examples:
+        Home Assistant relative links: `/config/updates` or `/lovelace/home`. 
+        Apps: `app://<package name>`. 
+        Entity `More Info` Panel: `entityId:<entity_ID>`. 
+        Deep links: `deep-link://<deep_link>`. 
+        See [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic/#opening-a-url) for more information and options."
+    selector:
+      text:
 
-  # field_attachment_type:
-  #   name: "📸 Attachment Type"
-  #   description: "Choose to send an attachment along with the notification."
-  #   selector:
-  #     select:
-  #       options:
-  #         - label: "None"
-  #           value: "none"
-  #         - label: "Camera"
-  #           value: "camera_entity"
-  # field_attachment_camera_entity:
-  #   name: "📸 Attachment: Camera Entity"
-  #   description: "Camera Entity to display snapshots of on the notification."
-  #   selector:
-  #     entity:
-  #       filter:
-  #         - domain: "camera"
+  field_attachment_type:
+    name: "📸 Attachment Type"
+    description: "Choose to send an attachment along with the notification."
+    selector:
+      select:
+        options:
+          - label: "None"
+            value: "none"
+          - label: "Camera"
+            value: "camera_entity"
+  field_attachment_camera_entity:
+    name: "📸 Attachment: Camera Entity"
+    description: "Camera Entity to display snapshots of on the notification."
+    selector:
+      entity:
+        filter:
+          - domain: "camera"
 
-  # field_car_ui:
-  #   name: "🚘 Show on Android Auto"
-  #   description: "Display notification on Android Auto interface. Android Only."
-  #   selector:
-  #     boolean:
-  # field_tag:
-  #   name: "🔖 Tag"
-  #   description: "Used to uniquely identify the notification. Use tag if you are using this script with other notification services. Leave empty otherwise. Recommended to leave empty."
-  #   selector:
-  #     text:
-  # field_group:
-  #   name: "📣 Notification Group ID"
-  #   description: "Used for grouping different notifications together visually."
-  #   selector:
-  #     text:
-  # field_channel:
-  #   name: "📣 Notification Channel"
-  #   description: "Defines the channel, to be used with Importance. Relates to the importance of the notification. Android Only."
-  #   selector:
-  #     text:
-  # field_importance:
-  #   name: "❕ Notification Channel Importance"
-  #   description: "See [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic/#notification-channel-importance) for more information. Android Only."
-  #   default: default
-  #   selector:
-  #     select:
-  #       options:
-  #         - label: "Urgent (Makes a sound with heads-up notification)"
-  #           value: high
-  #         - label: "Default (Makes a sound)"
-  #           value: default
-  #         - label: "Silent (Makes no sound)"
-  #           value: low
-  #         - label: "Low (Makes no sound, doesn't appear in status bar)"
-  #           value: min
-  # field_android_high_priority:
-  #   name: "❕ High Priority Mode"
-  #   description: "Workaround to ensure notifications are delivered in timely fashion. This will override the Notification Channel Importance with importance: high, and set ttl: 0. Android Only."
-  #   selector:
-  #     boolean:
-  # field_interruption_level:
-  #   name: "❕ Interruption Level"
-  #   description: "iOS Only."
-  #   default: active
-  #   selector:
-  #     select:
-  #       options:
-  #         - label: "Silent (Makes no sound, does not wake screen)"
-  #           value: passive
-  #         - label: "Default"
-  #           value: active
-  #         - label: "Important (Overrides Focus)"
-  #           value: time-sensitive
-  #         - label: "Critical (Overrides Focus and Mute, restricted features)"
-  #           value: critical
-  # field_visibility:
-  #   name: "🔏 Notification Lockscreen Visibility"
-  #   description: "Show or hide notification content on the lockscreen. Android Only."
-  #   default: "private"
-  #   selector:
-  #     select:
-  #       options:
-  #         - label: "Public: Always show content."
-  #           value: public
-  #         - label: "Private: Show content based on phone settings."
-  #           value: private
-  #         - label: "Secret: Always hide content on the lockscreen."
-  #           value: secret
+  field_car_ui:
+    name: "🚘 Show on Android Auto"
+    description: "Display notification on Android Auto interface. Android Only."
+    selector:
+      boolean:
+  field_tag:
+    name: "🔖 Tag"
+    description: "Used to uniquely identify the notification. Use tag if you are using this script with other notification services. Leave empty otherwise. Recommended to leave empty."
+    selector:
+      text:
+  field_group:
+    name: "📣 Notification Group ID"
+    description: "Used for grouping different notifications together visually."
+    selector:
+      text:
+  field_channel:
+    name: "📣 Notification Channel"
+    description: "Defines the channel, to be used with Importance. Relates to the importance of the notification. Android Only."
+    selector:
+      text:
+  field_importance:
+    name: "❕ Notification Channel Importance"
+    description: "See [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic/#notification-channel-importance) for more information. Android Only."
+    default: default
+    selector:
+      select:
+        options:
+          - label: "Urgent (Makes a sound with heads-up notification)"
+            value: high
+          - label: "Default (Makes a sound)"
+            value: default
+          - label: "Silent (Makes no sound)"
+            value: low
+          - label: "Low (Makes no sound, doesn't appear in status bar)"
+            value: min
+  field_android_high_priority:
+    name: "❕ High Priority Mode"
+    description: "Workaround to ensure notifications are delivered in timely fashion. This will override the Notification Channel Importance with importance: high, and set ttl: 0. Android Only."
+    selector:
+      boolean:
+  field_interruption_level:
+    name: "❕ Interruption Level"
+    description: "iOS Only."
+    default: active
+    selector:
+      select:
+        options:
+          - label: "Silent (Makes no sound, does not wake screen)"
+            value: passive
+          - label: "Default"
+            value: active
+          - label: "Important (Overrides Focus)"
+            value: time-sensitive
+          - label: "Critical (Overrides Focus and Mute, restricted features)"
+            value: critical
+  field_visibility:
+    name: "🔏 Notification Lockscreen Visibility"
+    description: "Show or hide notification content on the lockscreen. Android Only."
+    default: "private"
+    selector:
+      select:
+        options:
+          - label: "Public: Always show content."
+            value: public
+          - label: "Private: Show content based on phone settings."
+            value: private
+          - label: "Secret: Always hide content on the lockscreen."
+            value: secret
 
 
 
