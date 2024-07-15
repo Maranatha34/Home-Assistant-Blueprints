@@ -8,9 +8,6 @@ blueprint:
   author: Maranatha34/Home-Assistant-Blueprints
   description: <a href="https://github.com/Maranatha34/Home-Assistant-Blueprints/blob/main/Notifications.yaml" target="_blank">Github Link</a>
   input:
-    ##############################
-    # Input: Notification Strategy
-    ##############################
     notify_device:
       name: "📲 Device to notify"
       description: >-
