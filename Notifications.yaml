@@ -154,11 +154,11 @@ sequence:
   ##############################
   # Setup Variables
   ##############################
-  - alias: Basic Notification Content
-    variables:
-      title: "{{field_title}}"
-      subtitle: "{{subtitle}}"
-      message: "{{field_message}}"
+  # - alias: Basic Notification Content
+  #   variables:
+  #     title: "{{title}}"
+  #     subtitle: "{{subtitle}}"
+  #     message: "{{message}}"
 
   # - alias: Common Configuration Options
   #   variables:
