@@ -33,120 +33,120 @@ fields:
     selector:
       text:
 
-  icon:
-    name: "🙂 Icon"
-    description: "Custom icon for this notification. Android Only."
-    selector:
-      icon:
-  enable_icon_color:
-    name: "🎨 Use Icon Color"
-    description: "If disabled, uses default icon color. Android Only."
-    selector:
-      boolean:
-  icon_color:
-    name: "🎨 Icon Color"
-    description: "Custom icon color for this notification. Android Only."
-    selector:
-      color_rgb:
+  # icon:
+  #   name: "🙂 Icon"
+  #   description: "Custom icon for this notification. Android Only."
+  #   selector:
+  #     icon:
+  # enable_icon_color:
+  #   name: "🎨 Use Icon Color"
+  #   description: "If disabled, uses default icon color. Android Only."
+  #   selector:
+  #     boolean:
+  # icon_color:
+  #   name: "🎨 Icon Color"
+  #   description: "Custom icon color for this notification. Android Only."
+  #   selector:
+  #     color_rgb:
 
-  notification_link:
-    name: "🔗 Notification Link"
-    description: "Link to navigate to upon clicking the notification.
-      Examples:
-        Home Assistant relative links: `/config/updates` or `/lovelace/home`. 
-        Apps: `app://<package name>`. 
-        Entity `More Info` Panel: `entityId:<entity_ID>`. 
-        Deep links: `deep-link://<deep_link>`. 
-        See [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic/#opening-a-url) for more information and options."
-    selector:
-      text:
+  # notification_link:
+  #   name: "🔗 Notification Link"
+  #   description: "Link to navigate to upon clicking the notification.
+  #     Examples:
+  #       Home Assistant relative links: `/config/updates` or `/lovelace/home`. 
+  #       Apps: `app://<package name>`. 
+  #       Entity `More Info` Panel: `entityId:<entity_ID>`. 
+  #       Deep links: `deep-link://<deep_link>`. 
+  #       See [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic/#opening-a-url) for more information and options."
+  #   selector:
+  #     text:
 
-  attachment_type:
-    name: "📸 Attachment Type"
-    description: "Choose to send an attachment along with the notification."
-    selector:
-      select:
-        options:
-          - label: "None"
-            value: "none"
-          - label: "Camera"
-            value: "camera_entity"
-  attachment_camera_entity:
-    name: "📸 Attachment: Camera Entity"
-    description: "Camera Entity to display snapshots of on the notification."
-    selector:
-      entity:
-        filter:
-          - domain: "camera"
+  # attachment_type:
+  #   name: "📸 Attachment Type"
+  #   description: "Choose to send an attachment along with the notification."
+  #   selector:
+  #     select:
+  #       options:
+  #         - label: "None"
+  #           value: "none"
+  #         - label: "Camera"
+  #           value: "camera_entity"
+  # attachment_camera_entity:
+  #   name: "📸 Attachment: Camera Entity"
+  #   description: "Camera Entity to display snapshots of on the notification."
+  #   selector:
+  #     entity:
+  #       filter:
+  #         - domain: "camera"
 
-  car_ui:
-    name: "🚘 Show on Android Auto"
-    description: "Display notification on Android Auto interface. Android Only."
-    selector:
-      boolean:
-  tag:
-    name: "🔖 Tag"
-    description: "Used to uniquely identify the notification. Use tag if you are using this script with other notification services. Leave empty otherwise. Recommended to leave empty."
-    selector:
-      text:
-  group:
-    name: "📣 Notification Group ID"
-    description: "Used for grouping different notifications together visually."
-    selector:
-      text:
-  channel:
-    name: "📣 Notification Channel"
-    description: "Defines the channel, to be used with Importance. Relates to the importance of the notification. Android Only."
-    selector:
-      text:
-  importance:
-    name: "❕ Notification Channel Importance"
-    description: "See [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic/#notification-channel-importance) for more information. Android Only."
-    default: default
-    selector:
-      select:
-        options:
-          - label: "Urgent (Makes a sound with heads-up notification)"
-            value: high
-          - label: "Default (Makes a sound)"
-            value: default
-          - label: "Silent (Makes no sound)"
-            value: low
-          - label: "Low (Makes no sound, doesn't appear in status bar)"
-            value: min
-  android_high_priority:
-    name: "❕ High Priority Mode"
-    description: "Workaround to ensure notifications are delivered in timely fashion. This will override the Notification Channel Importance with importance: high, and set ttl: 0. Android Only."
-    selector:
-      boolean:
-  interruption_level:
-    name: "❕ Interruption Level"
-    description: "iOS Only."
-    default: active
-    selector:
-      select:
-        options:
-          - label: "Silent (Makes no sound, does not wake screen)"
-            value: passive
-          - label: "Default"
-            value: active
-          - label: "Important (Overrides Focus)"
-            value: time-sensitive
-          - label: "Critical (Overrides Focus and Mute, restricted features)"
-            value: critical
-  visibility:
-    name: "🔏 Notification Lockscreen Visibility"
-    description: "Show or hide notification content on the lockscreen. Android Only."
-    default: "private"
-    selector:
-      select:
-        options:
-          - label: "Public: Always show content."
-            value: public
-          - label: "Private: Show content based on phone settings."
-            value: private
-          - label: "Secret: Always hide content on the lockscreen."
-            value: secret
+  # car_ui:
+  #   name: "🚘 Show on Android Auto"
+  #   description: "Display notification on Android Auto interface. Android Only."
+  #   selector:
+  #     boolean:
+  # tag:
+  #   name: "🔖 Tag"
+  #   description: "Used to uniquely identify the notification. Use tag if you are using this script with other notification services. Leave empty otherwise. Recommended to leave empty."
+  #   selector:
+  #     text:
+  # group:
+  #   name: "📣 Notification Group ID"
+  #   description: "Used for grouping different notifications together visually."
+  #   selector:
+  #     text:
+  # channel:
+  #   name: "📣 Notification Channel"
+  #   description: "Defines the channel, to be used with Importance. Relates to the importance of the notification. Android Only."
+  #   selector:
+  #     text:
+  # importance:
+  #   name: "❕ Notification Channel Importance"
+  #   description: "See [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic/#notification-channel-importance) for more information. Android Only."
+  #   default: default
+  #   selector:
+  #     select:
+  #       options:
+  #         - label: "Urgent (Makes a sound with heads-up notification)"
+  #           value: high
+  #         - label: "Default (Makes a sound)"
+  #           value: default
+  #         - label: "Silent (Makes no sound)"
+  #           value: low
+  #         - label: "Low (Makes no sound, doesn't appear in status bar)"
+  #           value: min
+  # android_high_priority:
+  #   name: "❕ High Priority Mode"
+  #   description: "Workaround to ensure notifications are delivered in timely fashion. This will override the Notification Channel Importance with importance: high, and set ttl: 0. Android Only."
+  #   selector:
+  #     boolean:
+  # interruption_level:
+  #   name: "❕ Interruption Level"
+  #   description: "iOS Only."
+  #   default: active
+  #   selector:
+  #     select:
+  #       options:
+  #         - label: "Silent (Makes no sound, does not wake screen)"
+  #           value: passive
+  #         - label: "Default"
+  #           value: active
+  #         - label: "Important (Overrides Focus)"
+  #           value: time-sensitive
+  #         - label: "Critical (Overrides Focus and Mute, restricted features)"
+  #           value: critical
+  # visibility:
+  #   name: "🔏 Notification Lockscreen Visibility"
+  #   description: "Show or hide notification content on the lockscreen. Android Only."
+  #   default: "private"
+  #   selector:
+  #     select:
+  #       options:
+  #         - label: "Public: Always show content."
+  #           value: public
+  #         - label: "Private: Show content based on phone settings."
+  #           value: private
+  #         - label: "Secret: Always hide content on the lockscreen."
+  #           value: secret
 
 
 
@@ -154,55 +154,54 @@ sequence:
   ##############################
   # Setup Variables
   ##############################
-  - alias: Basic Notification Content
-    variables:
-      title: title
-      subtitle: subtitle
-      message: message
+  # - alias: Basic Notification Content
+  #   variables:
+  #     title: title
+  #     subtitle: subtitle
+  #     message: message
 
-  - alias: Common Configuration Options
-    variables:
-      notification_link: notification_link
-      tag: "{{ iif(tag|length, tag, this.entity_id ~ '-' ~ context.id) }}"
-      group: group
+  # - alias: Common Configuration Options
+  #   variables:
+  #     notification_link: notification_link
+  #     tag: "{{ iif(tag|length, tag, this.entity_id ~ '-' ~ context.id) }}"
+  #     group: group
 
-  - alias: Android Configuration Options
-    variables:
-      channel: channel
-      visibility: visibility
-      importance: importance
-      car_ui: car_ui
+  # - alias: Android Configuration Options
+  #   variables:
+  #     channel: channel
+  #     visibility: visibility
+  #     importance: importance
+  #     car_ui: car_ui
 
-      # [Notification Banner Icon]
-      notification_icon: icon
-      enable_icon_color: enable_icon_color
-      icon_color_selector: icon_color
-      icon_color_hex: '{{ "#{:02x}{:02x}{:02x}".format(icon_color_selector[0], icon_color_selector[1], icon_color_selector[2]) }}'
-      android_high_priority: android_high_priority
+  #     notification_icon: icon
+  #     enable_icon_color: enable_icon_color
+  #     icon_color_selector: icon_color
+  #     icon_color_hex: '{{ "#{:02x}{:02x}{:02x}".format(icon_color_selector[0], icon_color_selector[1], icon_color_selector[2]) }}'
+  #     android_high_priority: android_high_priority
 
-  - alias: iOS Configuration Options
-    variables:
-      interruption_level: interruption_level
+  # - alias: iOS Configuration Options
+  #   variables:
+  #     interruption_level: interruption_level
 
-  - alias: Attachments
-    variables:
-      attachment_type: attachment_type
-      attachment_camera_entity: attachment_camera_entity
-      camera_image_url: >-
-        {% if (attachment_camera_entity|length) %}
-          {% if (state_attr(attachment_camera_entity,'entity_picture')|length) %}
-            {{state_attr(attachment_camera_entity,'entity_picture')}}
-          {% else %}
-            {{"/api/camera_proxy/{id}".format(id=attachment_camera_entity)}}
-          {%- endif %}
-        {%- endif %}
-      media_url: >-
-        {{
-          {
-            'none': '',
-            'camera_entity': iif(camera_image_url | length, camera_image_url)
-          }.get(attachment_type)
-        }}
+  # - alias: Attachments
+  #   variables:
+  #     attachment_type: attachment_type
+  #     attachment_camera_entity: attachment_camera_entity
+  #     camera_image_url: >-
+  #       {% if (attachment_camera_entity|length) %}
+  #         {% if (state_attr(attachment_camera_entity,'entity_picture')|length) %}
+  #           {{state_attr(attachment_camera_entity,'entity_picture')}}
+  #         {% else %}
+  #           {{"/api/camera_proxy/{id}".format(id=attachment_camera_entity)}}
+  #         {%- endif %}
+  #       {%- endif %}
+  #     media_url: >-
+  #       {{
+  #         {
+  #           'none': '',
+  #           'camera_entity': iif(camera_image_url | length, camera_image_url)
+  #         }.get(attachment_type)
+  #       }}
 
   - alias: Device Configuration
     variables:
@@ -213,36 +212,36 @@ sequence:
 
 
   # - alias: Setup Payload
-    # variables:
-      # Build OS specific notification payloads.
-      # notification_data: >-
-      #   {% set apple_device = 'APPLE' in (device_attr(notify_device, "manufacturer")|upper) %}
-      #   {% set payload = namespace(data={ 'apple_device': apple_device }) %}
-      #   {% if payload.data.apple_device %}
-      #     {# iOS #}
-      #     {% set push = namespace(d={}) %}
-      #     {% set payload.data = dict(payload.data, **{ 'subtitle': subtitle }) %}
-      #     {% set push.d = dict(push.d, **{ 'interruption-level': interruption_level }) %}
-      #     {% if notification_link|length %}{% set payload.data = dict(payload.data, **{ 'url': notification_link }) %}{% endif %}
-      #     {% if attachment_type == 'camera_entity' %}{% set payload.data = dict(payload.data, **{ 'entity_id': attachment_camera_entity }) %}{% endif %}
-      #     {% set payload.data = dict(payload.data, **{ 'push': push.d }) %}
-      #   {% else %}
-      #     {# Android #}
-      #     {% set payload.data = dict(payload.data, **{ 'subject': subtitle }) %}
-      #     {% set payload.data = dict(payload.data, **{ 'visibility': visibility }) %}
-      #     {% set payload.data = dict(payload.data, **{ 'importance': importance }) %}
-      #     {% if android_high_priority %}{% set payload.data = dict(payload.data, **{ 'priority': 'high', 'ttl': 0 }) %}{% endif %}
-      #     {% if notification_link|length %}{% set payload.data = dict(payload.data, **{ 'clickAction': notification_link }) %}{% endif %}
-      #     {% if attachment_type == 'camera_entity' and (media_url|length) %}{% set payload.data = dict(payload.data, **{ 'image': media_url }) %}{% endif %}
-      #     {% if notification_icon|length %}{% set payload.data = dict(payload.data, **{ 'notification_icon': notification_icon }) %}{% endif %}
-      #     {% if enable_icon_color %}{% set payload.data = dict(payload.data, **{ 'color': icon_color_hex }) %}{% endif %}
-      #     {% if channel|length %}{% set payload.data = dict(payload.data, **{ 'channel': channel }) %}{% endif %}
-      #     {% if car_ui %}{% set payload.data = dict(payload.data, **{ 'car_ui': car_ui }) %}{% endif %}
-      #   {% endif %}
-      #   {# Common  #}
-      #   {% set payload.data = dict(payload.data, **{ 'tag': tag }) %}
-      #   {% if group|length %}{% set payload.data = dict(payload.data, **{ 'group': group }) %}{% endif %}
-      #   {{ payload.data }}
+  #   variables:
+  #     # Build OS specific notification payloads.
+  #     notification_data: >-
+  #       {% set apple_device = 'APPLE' in (device_attr(notify_device, "manufacturer")|upper) %}
+  #       {% set payload = namespace(data={ 'apple_device': apple_device }) %}
+  #       {% if payload.data.apple_device %}
+  #         {# iOS #}
+  #         {% set push = namespace(d={}) %}
+  #         {% set payload.data = dict(payload.data, **{ 'subtitle': subtitle }) %}
+  #         {% set push.d = dict(push.d, **{ 'interruption-level': interruption_level }) %}
+  #         {% if notification_link|length %}{% set payload.data = dict(payload.data, **{ 'url': notification_link }) %}{% endif %}
+  #         {% if attachment_type == 'camera_entity' %}{% set payload.data = dict(payload.data, **{ 'entity_id': attachment_camera_entity }) %}{% endif %}
+  #         {% set payload.data = dict(payload.data, **{ 'push': push.d }) %}
+  #       {% else %}
+  #         {# Android #}
+  #         {% set payload.data = dict(payload.data, **{ 'subject': subtitle }) %}
+  #         {% set payload.data = dict(payload.data, **{ 'visibility': visibility }) %}
+  #         {% set payload.data = dict(payload.data, **{ 'importance': importance }) %}
+  #         {% if android_high_priority %}{% set payload.data = dict(payload.data, **{ 'priority': 'high', 'ttl': 0 }) %}{% endif %}
+  #         {% if notification_link|length %}{% set payload.data = dict(payload.data, **{ 'clickAction': notification_link }) %}{% endif %}
+  #         {% if attachment_type == 'camera_entity' and (media_url|length) %}{% set payload.data = dict(payload.data, **{ 'image': media_url }) %}{% endif %}
+  #         {% if notification_icon|length %}{% set payload.data = dict(payload.data, **{ 'notification_icon': notification_icon }) %}{% endif %}
+  #         {% if enable_icon_color %}{% set payload.data = dict(payload.data, **{ 'color': icon_color_hex }) %}{% endif %}
+  #         {% if channel|length %}{% set payload.data = dict(payload.data, **{ 'channel': channel }) %}{% endif %}
+  #         {% if car_ui %}{% set payload.data = dict(payload.data, **{ 'car_ui': car_ui }) %}{% endif %}
+  #       {% endif %}
+  #       {# Common  #}
+  #       {% set payload.data = dict(payload.data, **{ 'tag': tag }) %}
+  #       {% if group|length %}{% set payload.data = dict(payload.data, **{ 'group': group }) %}{% endif %}
+  #       {{ payload.data }}
 
   ##############################
   # Send Notification
