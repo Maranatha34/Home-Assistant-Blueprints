@@ -12,44 +12,44 @@ blueprint:
 # Fields
 ##############################
 fields:
-  notify_device:
+  field_notify_device:
     name: "📲 Device to notify"
     selector:
       device:
         filter:
           - integration: mobile_app
 
-  title:
+  field_title:
     name: "🏷️ Title"
     selector:
       text:
-  subtitle:
+  field_subtitle:
     name: "🏷️ Subtitle"
     selector:
       text:
-  message:
+  field_message:
     name: "💬 Message"
     description: "The message body to display on the notification. You may add HTML formatting to customise the look of the message."
     selector:
       text:
 
-  # icon:
+  # field_icon:
   #   name: "🙂 Icon"
   #   description: "Custom icon for this notification. Android Only."
   #   selector:
   #     icon:
-  # enable_icon_color:
+  # field_enable_icon_color:
   #   name: "🎨 Use Icon Color"
   #   description: "If disabled, uses default icon color. Android Only."
   #   selector:
   #     boolean:
-  # icon_color:
+  # field_icon_color:
   #   name: "🎨 Icon Color"
   #   description: "Custom icon color for this notification. Android Only."
   #   selector:
   #     color_rgb:
 
-  # notification_link:
+  # field_notification_link:
   #   name: "🔗 Notification Link"
   #   description: "Link to navigate to upon clicking the notification.
   #     Examples:
@@ -61,7 +61,7 @@ fields:
   #   selector:
   #     text:
 
-  # attachment_type:
+  # field_attachment_type:
   #   name: "📸 Attachment Type"
   #   description: "Choose to send an attachment along with the notification."
   #   selector:
@@ -71,7 +71,7 @@ fields:
   #           value: "none"
   #         - label: "Camera"
   #           value: "camera_entity"
-  # attachment_camera_entity:
+  # field_attachment_camera_entity:
   #   name: "📸 Attachment: Camera Entity"
   #   description: "Camera Entity to display snapshots of on the notification."
   #   selector:
@@ -79,27 +79,27 @@ fields:
   #       filter:
   #         - domain: "camera"
 
-  # car_ui:
+  # field_car_ui:
   #   name: "🚘 Show on Android Auto"
   #   description: "Display notification on Android Auto interface. Android Only."
   #   selector:
   #     boolean:
-  # tag:
+  # field_tag:
   #   name: "🔖 Tag"
   #   description: "Used to uniquely identify the notification. Use tag if you are using this script with other notification services. Leave empty otherwise. Recommended to leave empty."
   #   selector:
   #     text:
-  # group:
+  # field_group:
   #   name: "📣 Notification Group ID"
   #   description: "Used for grouping different notifications together visually."
   #   selector:
   #     text:
-  # channel:
+  # field_channel:
   #   name: "📣 Notification Channel"
   #   description: "Defines the channel, to be used with Importance. Relates to the importance of the notification. Android Only."
   #   selector:
   #     text:
-  # importance:
+  # field_importance:
   #   name: "❕ Notification Channel Importance"
   #   description: "See [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic/#notification-channel-importance) for more information. Android Only."
   #   default: default
@@ -114,12 +114,12 @@ fields:
   #           value: low
   #         - label: "Low (Makes no sound, doesn't appear in status bar)"
   #           value: min
-  # android_high_priority:
+  # field_android_high_priority:
   #   name: "❕ High Priority Mode"
   #   description: "Workaround to ensure notifications are delivered in timely fashion. This will override the Notification Channel Importance with importance: high, and set ttl: 0. Android Only."
   #   selector:
   #     boolean:
-  # interruption_level:
+  # field_interruption_level:
   #   name: "❕ Interruption Level"
   #   description: "iOS Only."
   #   default: active
@@ -134,7 +134,7 @@ fields:
   #           value: time-sensitive
   #         - label: "Critical (Overrides Focus and Mute, restricted features)"
   #           value: critical
-  # visibility:
+  # field_visibility:
   #   name: "🔏 Notification Lockscreen Visibility"
   #   description: "Show or hide notification content on the lockscreen. Android Only."
   #   default: "private"
@@ -154,39 +154,39 @@ sequence:
   ##############################
   # Setup Variables
   ##############################
-  # - alias: Basic Notification Content
-  #   variables:
-  #     title: "{{title}}"
-  #     subtitle: "{{subtitle}}"
-  #     message: "{{message}}"
+  - alias: Basic Notification Content
+    variables:
+      title: "{{field_title}}"
+      subtitle: "{{field_subtitle}}"
+      message: "{{field_message}}"
 
   # - alias: Common Configuration Options
   #   variables:
-  #     notification_link: "{{notification_link}}"
-  #     tag: "{{ iif(tag|length, tag, this.entity_id ~ '-' ~ context.id) }}"
-  #     group: "{{group}}"
+  #     notification_link: "{{field_notification_link}}"
+  #     tag: "{{ iif(field_tag|length, field_tag, this.entity_id ~ '-' ~ context.id) }}"
+  #     group: "{{field_group}}"
 
   # - alias: Android Configuration Options
   #   variables:
-  #     channel: "{{channel}}"
-  #     visibility: "{{visibility}}"
-  #     importance: "{{importance}}"
-  #     car_ui: "{{car_ui}}"
+  #     channel: "{{field_channel}}"
+  #     visibility: "{{field_visibility}}"
+  #     importance: "{{field_importance}}"
+  #     car_ui: "{{field_car_ui}}"
 
-  #     notification_icon: "{{icon}}"
-  #     enable_icon_color: "{{enable_icon_color}}"
-  #     icon_color_selector: "{{icon_color}}"
+  #     notification_icon: "{{field_icon}}"
+  #     enable_icon_color: "{{field_enable_icon_color}}"
+  #     icon_color_selector: "{{field_icon_color}}"
   #     icon_color_hex: '{{ "#{:02x}{:02x}{:02x}".format(icon_color_selector[0], icon_color_selector[1], icon_color_selector[2]) }}'
-  #     android_high_priority: "{{android_high_priority}}"
+  #     android_high_priority: "{{field_android_high_priority}}"
 
   # - alias: iOS Configuration Options
   #   variables:
-  #     interruption_level: "{{interruption_level}}"
+  #     interruption_level: "{{field_interruption_level}}"
 
   # - alias: Attachments
   #   variables:
-  #     attachment_type: "{{attachment_type}}"
-  #     attachment_camera_entity: "{{attachment_camera_entity}}"
+  #     attachment_type: "{{field_attachment_type}}"
+  #     attachment_camera_entity: "{{field_attachment_camera_entity}}"
   #     camera_image_url: >-
   #       {% if (attachment_camera_entity|length) %}
   #         {% if (state_attr(attachment_camera_entity,'entity_picture')|length) %}
@@ -205,7 +205,7 @@ sequence:
 
   - alias: Device Configuration
     variables:
-      notify_device: "{{notify_device}}"
+      notify_device: "{{field_notify_device}}"
       notify_service: >-
         {{ "notify.mobile_app_{id}".format(id=device_attr(notify_device,'name')|slugify) }}
 
