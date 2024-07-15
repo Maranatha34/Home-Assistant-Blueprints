@@ -173,11 +173,11 @@ sequence:
       importance: "{{field_importance}}"
       car_ui: "{{field_car_ui}}"
 
-      notification_icon: "{{field_icon}}"
-      enable_icon_color: "{{field_enable_icon_color}}"
-      icon_color_selector: "{{field_icon_color}}"
+      # notification_icon: "{{field_icon}}"
+      # enable_icon_color: "{{field_enable_icon_color}}"
+      # icon_color_selector: "{{field_icon_color}}"
       # icon_color_hex: '{{ "#{:02x}{:02x}{:02x}".format(icon_color_selector[0], icon_color_selector[1], icon_color_selector[2]) }}'
-      android_high_priority: "{{field_android_high_priority}}"
+      # android_high_priority: "{{field_android_high_priority}}"
 
   # - alias: iOS Configuration Options
   #   variables:
