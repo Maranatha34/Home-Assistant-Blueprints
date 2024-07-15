@@ -160,48 +160,48 @@ sequence:
       subtitle: "{{field_subtitle}}"
       message: "{{field_message}}"
 
-  # - alias: Common Configuration Options
-  #   variables:
-  #     notification_link: "{{field_notification_link}}"
-  #     tag: "{{ iif(field_tag|length, field_tag, this.entity_id ~ '-' ~ context.id) }}"
-  #     group: "{{field_group}}"
+  - alias: Common Configuration Options
+    variables:
+      notification_link: "{{field_notification_link}}"
+      tag: "{{ iif(field_tag|length, field_tag, this.entity_id ~ '-' ~ context.id) }}"
+      group: "{{field_group}}"
 
-  # - alias: Android Configuration Options
-  #   variables:
-  #     channel: "{{field_channel}}"
-  #     visibility: "{{field_visibility}}"
-  #     importance: "{{field_importance}}"
-  #     car_ui: "{{field_car_ui}}"
+  - alias: Android Configuration Options
+    variables:
+      channel: "{{field_channel}}"
+      visibility: "{{field_visibility}}"
+      importance: "{{field_importance}}"
+      car_ui: "{{field_car_ui}}"
 
-  #     notification_icon: "{{field_icon}}"
-  #     enable_icon_color: "{{field_enable_icon_color}}"
-  #     icon_color_selector: "{{field_icon_color}}"
-  #     icon_color_hex: '{{ "#{:02x}{:02x}{:02x}".format(icon_color_selector[0], icon_color_selector[1], icon_color_selector[2]) }}'
-  #     android_high_priority: "{{field_android_high_priority}}"
+      notification_icon: "{{field_icon}}"
+      enable_icon_color: "{{field_enable_icon_color}}"
+      icon_color_selector: "{{field_icon_color}}"
+      icon_color_hex: '{{ "#{:02x}{:02x}{:02x}".format(icon_color_selector[0], icon_color_selector[1], icon_color_selector[2]) }}'
+      android_high_priority: "{{field_android_high_priority}}"
 
-  # - alias: iOS Configuration Options
-  #   variables:
-  #     interruption_level: "{{field_interruption_level}}"
+  - alias: iOS Configuration Options
+    variables:
+      interruption_level: "{{field_interruption_level}}"
 
-  # - alias: Attachments
-  #   variables:
-  #     attachment_type: "{{field_attachment_type}}"
-  #     attachment_camera_entity: "{{field_attachment_camera_entity}}"
-  #     camera_image_url: >-
-  #       {% if (attachment_camera_entity|length) %}
-  #         {% if (state_attr(attachment_camera_entity,'entity_picture')|length) %}
-  #           {{state_attr(attachment_camera_entity,'entity_picture')}}
-  #         {% else %}
-  #           {{"/api/camera_proxy/{id}".format(id=attachment_camera_entity)}}
-  #         {%- endif %}
-  #       {%- endif %}
-  #     media_url: >-
-  #       {{
-  #         {
-  #           'none': '',
-  #           'camera_entity': iif(camera_image_url | length, camera_image_url)
-  #         }.get(attachment_type)
-  #       }}
+  - alias: Attachments
+    variables:
+      attachment_type: "{{field_attachment_type}}"
+      attachment_camera_entity: "{{field_attachment_camera_entity}}"
+      camera_image_url: >-
+        {% if (attachment_camera_entity|length) %}
+          {% if (state_attr(attachment_camera_entity,'entity_picture')|length) %}
+            {{state_attr(attachment_camera_entity,'entity_picture')}}
+          {% else %}
+            {{"/api/camera_proxy/{id}".format(id=attachment_camera_entity)}}
+          {%- endif %}
+        {%- endif %}
+      media_url: >-
+        {{
+          {
+            'none': '',
+            'camera_entity': iif(camera_image_url | length, camera_image_url)
+          }.get(attachment_type)
+        }}
 
   - alias: Device Configuration
     variables:
