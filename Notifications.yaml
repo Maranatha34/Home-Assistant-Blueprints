@@ -24,22 +24,22 @@ blueprint:
 # Fields
 ##############################
 fields:
-#   notify_device:
-#     name: "📲 Device to notify"
-#     selector:
-#       device:
-#         filter:
-#           - integration: mobile_app
+  notify_device:
+    name: "📲 Device to notify"
+    selector:
+      device:
+        filter:
+          - integration: mobile_app
 
-  title:
+  field_title:
     name: "🏷️ Title"
     selector:
       text:
-  subtitle:
-    name: "🏷️ Subtitle"
-    selector:
-      text:
-  message:
+  # subtitle:
+  #   name: "🏷️ Subtitle"
+  #   selector:
+  #     text:
+  field_message:
     name: "💬 Message"
     description: "The message body to display on the notification. You may add HTML formatting to customise the look of the message."
     selector:
@@ -168,9 +168,9 @@ sequence:
   ##############################
   - alias: Basic Notification Content
     variables:
-      title: "title"
-      subtitle: "{subtitle}"
-      message: "{message}"
+      title: field_title
+      # subtitle: "{subtitle}"
+      message: {field_message}
 
   # - alias: Common Configuration Options
   #   variables:
