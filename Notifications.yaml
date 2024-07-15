@@ -338,4 +338,3 @@ sequence:
   # Return user response
   ##############################
   - stop: "Script stopped."
-    response_variable: "user_response"
