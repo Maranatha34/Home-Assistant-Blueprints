@@ -203,11 +203,11 @@ sequence:
   #         }.get(attachment_type)
   #       }}
 
-  # - alias: Device Configuration
-  #   variables:
-  #     notify_device: "{{notify_device}}"
-  #     notify_service: >-
-  #       {{ "notify.mobile_app_{id}".format(id=device_attr(notify_device,'name')|slugify) }}
+  - alias: Device Configuration
+    variables:
+      notify_device: "{{notify_device}}"
+      notify_service: >-
+        {{ "notify.mobile_app_{id}".format(id=device_attr(notify_device,'name')|slugify) }}
 
 
   # - alias: Setup Payload
