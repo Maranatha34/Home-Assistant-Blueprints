@@ -24,12 +24,12 @@ blueprint:
 # Fields
 ##############################
 fields:
-  notify_device:
-    name: "📲 Device to notify"
-    selector:
-      device:
-        filter:
-          - integration: mobile_app
+  # notify_device:
+  #   name: "📲 Device to notify"
+  #   selector:
+  #     device:
+  #       filter:
+  #         - integration: mobile_app
 
   field_title:
     name: "🏷️ Title"
@@ -170,7 +170,7 @@ sequence:
     variables:
       title: field_title
       # subtitle: "{subtitle}"
-      message: "{field_message}"
+      message: "{{field_message}}"
 
   # - alias: Common Configuration Options
   #   variables:
