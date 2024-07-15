@@ -102,7 +102,7 @@ fields:
   importance:
     name: "❕ Notification Channel Importance"
     description: "See [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic/#notification-channel-importance) for more information. Android Only."
-    default: true
+    default: default
     selector:
       select:
         options:
