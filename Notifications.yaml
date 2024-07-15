@@ -14,10 +14,6 @@ blueprint:
 fields:
   notify_device:
     name: "📲 Device to notify"
-    description: >-
-        Device needs to run the official [Home Assistant Companion](https://companion.home-assistant.io/) app to receive notifications.<br><br>
-        ❔ Only used with `📲 Notification Strategy: Device`<br>
-        👍🏻 `Device` is the preferred and default option.
     selector:
       device:
         filter:
@@ -25,48 +21,49 @@ fields:
 
   title:
     name: "🏷️ Title"
-    description: "The title of the notification.  \n\n`Optional`\n"
     selector:
       text:
   subtitle:
     name: "🏷️ Subtitle"
-    description: "The subtitle of the notification.  \n\n`Optional`\n"
     selector:
       text:
   message:
     name: "💬 Message"
-    description: "The message body to display on the notification.  \n\n`🤖 Android`: You may add [HTML formatting](https://companion.home-assistant.io/docs/notifications/notifications-basic?_highlight=tag#notification-message-html-formatting) to customise the look of the message."
+    description: "The message body to display on the notification. You may add HTML formatting to customise the look of the message."
     selector:
       text:
 
   icon:
     name: "🙂 Icon"
-    description: "Custom icon for this notification.  \n\n`🤖 Android Only`, `Optional`"
+    description: "Custom icon for this notification. Android Only."
     selector:
       icon:
   enable_icon_color:
     name: "🎨 Use Icon Color"
-    description: "If disabled, uses default icon color.  \n\n`🤖 Android Only`, `Optional`"
+    description: "If disabled, uses default icon color. Android Only."
     selector:
       boolean:
   icon_color:
     name: "🎨 Icon Color"
-    description: "Custom icon color for this notification.  \n\n`🤖 Android Only`, `Optional`"
+    description: "Custom icon color for this notification. Android Only."
     selector:
       color_rgb:
 
   notification_link:
     name: "🔗 Notification Link"
-    description: "Link to navigate to upon clicking the notification.  \n\n Examples:  \n - Home Assistant relative links: `/config/updates` or `/lovelace/home`  \n - Apps: `app://<package name>`  \n - Entity `More Info` Panel: `entityId:<entity_ID>`  \n - Deep links: `deep-link://<deep_link>`  \n\nSee [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic/#opening-a-url) for more information and options.  \n\n`Optional`"
+    description: "Link to navigate to upon clicking the notification.
+      Examples:
+        Home Assistant relative links: `/config/updates` or `/lovelace/home`. 
+        Apps: `app://<package name>`. 
+        Entity `More Info` Panel: `entityId:<entity_ID>`. 
+        Deep links: `deep-link://<deep_link>`. 
+        See [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic/#opening-a-url) for more information and options."
     selector:
       text:
 
   attachment_type:
     name: "📸 Attachment Type"
-    description: >
-      Choose to send an attachment along with the notification.<br>
-
-      `Optional`
+    description: "Choose to send an attachment along with the notification."
     selector:
       select:
         options:
@@ -76,15 +73,7 @@ fields:
             value: "camera_entity"
   attachment_camera_entity:
     name: "📸 Attachment: Camera Entity"
-    description: >-
-      Camera Entity to display snapshots of on the notification.<br>
-
-      Please note, iOS and Android have differing vehaviours, as specified in the documentation.
-      See the links below for more information.
-
-      <table><tr><td> <a target="_blank" href="https://companion.home-assistant.io/docs/notifications/dynamic-content#camera-stream"> Camera Stream</a></td><td> <a target="_blank" href="https://companion.home-assistant.io/docs/notifications/notification-attachments#automatic-snapshots">🤖 Automatic Snapshots</a></td></tr></table><br>
-
-      ❔ Only used with `Attachment Type: Camera`
+    description: "Camera Entity to display snapshots of on the notification."
     selector:
       entity:
         filter:
@@ -92,27 +81,27 @@ fields:
 
   car_ui:
     name: "🚘 Show on Android Auto"
-    description: "Display notification on Android Auto interface.  \n\n`🤖 Android Only`"
+    description: "Display notification on Android Auto interface. Android Only."
     selector:
       boolean:
   tag:
     name: "🔖 Tag"
-    description: "Used to uniquely identify the notification.  \n\nUse tag if you are using this script with other notification services.  \nLeave empty otherwise.  \n\nExample: `my_awesome_notification_for_device_X`  \n\n👍🏻 Recommended to leave empty\n\n`Optional`"
+    description: "Used to uniquely identify the notification. Use tag if you are using this script with other notification services. Leave empty otherwise. Recommended to leave empty."
     selector:
       text:
   group:
     name: "📣 Notification Group ID"
-    description: "Used for grouping different notifications together visually.  \n\n⚠️ iOS critical notifications do no support grouping.  \nSee [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic?_highlight=tag#grouping) for more information.  \n\n`Optional`"
+    description: "Used for grouping different notifications together visually."
     selector:
       text:
   channel:
     name: "📣 Notification Channel"
-    description: "Defines the channel, to be used with Importance.  \nRelates to the importance of the notification.  \n\n`🤖 Android Only`, `Optional`"
+    description: "Defines the channel, to be used with Importance. Relates to the importance of the notification. Android Only."
     selector:
       text:
   importance:
     name: "❕ Notification Channel Importance"
-    description: "See [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic/#notification-channel-importance) for more information.  \n\n`🤖 Android Only`"
+    description: "See [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic/#notification-channel-importance) for more information. Android Only."
     selector:
       select:
         options:
@@ -126,12 +115,12 @@ fields:
             value: min
   android_high_priority:
     name: "❕ High Priority Mode"
-    description: "Workaround to ensure notifications are delivered in timely fashion. This will override the Notification Channel Importance with `importance: high`, and set `ttl: 0`.  \n\n`🤖 Android Only`"
+    description: "Workaround to ensure notifications are delivered in timely fashion. This will override the Notification Channel Importance with importance: high, and set ttl: 0. Android Only."
     selector:
       boolean:
   interruption_level:
     name: "❕ Interruption Level"
-    description: "See [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic/#interruption-level) for more information.  \n\n` iOS Only`"
+    description: "iOS Only."
     selector:
       select:
         options:
@@ -145,7 +134,7 @@ fields:
             value: critical
   visibility:
     name: "🔏 Notification Lockscreen Visibility"
-    description: "Show or hide notification content on the lockscreen.  \nSee [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic?_highlight=tag#notification-sensitivity--lock-screen-visibility) for more information.  \n\nDefault: `Private`  \n\n`🤖 Android Only`"
+    description: "Show or hide notification content on the lockscreen. Android Only."
     selector:
       select:
         options:
