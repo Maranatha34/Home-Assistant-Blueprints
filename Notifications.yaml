@@ -170,7 +170,7 @@ sequence:
     variables:
       title: field_title
       # subtitle: "{subtitle}"
-      message: {field_message}
+      message: "{field_message}"
 
   # - alias: Common Configuration Options
   #   variables:
