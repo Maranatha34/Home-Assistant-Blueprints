@@ -1,15 +1,15 @@
 mode: restart
 blueprint:
-  name: 🔔 Notifications
-  source_url: https://github.com/Maranatha34/Home-Assistant-Notifications/blob/main/Notifications.yaml
+  name: Notifications
+  source_url: https://github.com/Maranatha34/Home-Assistant-Blueprints/blob/main/Notifications.yaml
   homeassistant:
     min_version: 2023.11.0
   domain: script
-  author: samuelthng/t-house-blueprints
+  author: Maranatha34/Home-Assistant-Blueprints
   description: >-
     <div>
       <h2>🔔 Notifications</h2>
-       🔗 <a href="https://github.com/Maranatha34/Home-Assistant-Notifications/blob/main/Notifications.yaml" target="_blank">Github Link</a>
+       🔗 <a href="https://github.com/Maranatha34/Home-Assistant-Blueprints/blob/main/Notifications.yaml" target="_blank">Github Link</a>
     </div>
 
 ##############################
