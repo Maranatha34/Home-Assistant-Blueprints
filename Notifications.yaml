@@ -102,6 +102,7 @@ fields:
   importance:
     name: "❕ Notification Channel Importance"
     description: "See [documentation](https://companion.home-assistant.io/docs/notifications/notifications-basic/#notification-channel-importance) for more information. Android Only."
+    default: true
     selector:
       select:
         options:
@@ -121,6 +122,7 @@ fields:
   interruption_level:
     name: "❕ Interruption Level"
     description: "iOS Only."
+    default: active
     selector:
       select:
         options:
@@ -135,6 +137,7 @@ fields:
   visibility:
     name: "🔏 Notification Lockscreen Visibility"
     description: "Show or hide notification content on the lockscreen. Android Only."
+    default: "private"
     selector:
       select:
         options:
