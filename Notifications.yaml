@@ -6,11 +6,7 @@ blueprint:
     min_version: 2023.11.0
   domain: script
   author: Maranatha34/Home-Assistant-Blueprints
-  description: >-
-    <div>
-      <h2>🔔 Notifications</h2>
-       🔗 <a href="https://github.com/Maranatha34/Home-Assistant-Blueprints/blob/main/Notifications.yaml" target="_blank">Github Link</a>
-    </div>
+  description: <a href="https://github.com/Maranatha34/Home-Assistant-Blueprints/blob/main/Notifications.yaml" target="_blank">Github Link</a>
 
 ##############################
 # Fields
