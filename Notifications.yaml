@@ -7,17 +7,32 @@ blueprint:
   domain: script
   author: Maranatha34/Home-Assistant-Blueprints
   description: <a href="https://github.com/Maranatha34/Home-Assistant-Blueprints/blob/main/Notifications.yaml" target="_blank">Github Link</a>
+  input:
+    ##############################
+    # Input: Notification Strategy
+    ##############################
+    notify_device:
+      name: "📲 Device to notify"
+      description: >-
+        Device needs to run the official [Home Assistant Companion](https://companion.home-assistant.io/) app to receive notifications.<br><br>
+        ❔ Only used with `📲 Notification Strategy: Device`<br>
+        👍🏻 `Device` is the preferred and default option.
+      default: ""
+      selector:
+        device:
+          filter:
+            - integration: mobile_app
 
 ##############################
 # Fields
 ##############################
-fields:
-  notify_device:
-    name: "📲 Device to notify"
-    selector:
-      device:
-        filter:
-          - integration: mobile_app
+# fields:
+#   notify_device:
+#     name: "📲 Device to notify"
+#     selector:
+#       device:
+#         filter:
+#           - integration: mobile_app
 
   title:
     name: "🏷️ Title"
@@ -154,11 +169,11 @@ sequence:
   ##############################
   # Setup Variables
   ##############################
-  # - alias: Basic Notification Content
-  #   variables:
-  #     title: title
-  #     subtitle: subtitle
-  #     message: message
+  - alias: Basic Notification Content
+    variables:
+      title: title
+      subtitle: subtitle
+      message: message
 
   # - alias: Common Configuration Options
   #   variables:
@@ -203,12 +218,16 @@ sequence:
   #         }.get(attachment_type)
   #       }}
 
+  # - alias: Device Configuration
+  #   variables:
+  #     notify_device: notify_device
+  #     notify_service: >-
+  #       {{ "notify.mobile_app_{id}".format(id=device_attr(notify_device,'name')|slugify) }}
   - alias: Device Configuration
     variables:
-      notify_device: notify_device
+      notify_device: !input notify_device
       notify_service: >-
         {{ "notify.mobile_app_{id}".format(id=device_attr(notify_device,'name')|slugify) }}
-
 
 
   # - alias: Setup Payload
